@@ -3,7 +3,7 @@ export const nominationActionTypes = {
   REMOVE_NOMINATION: 'REMOVE_NOMINATION',
 }
 
-export const addNominations = (nomination) => (dispatch) => {
+export const addNomination = (nomination) => (dispatch) => {
   return dispatch({
     type: nominationActionTypes.ADD_NOMINATION,
     nomination: nomination,

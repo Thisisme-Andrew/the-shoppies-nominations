@@ -1,14 +1,12 @@
-import { useSelector } from 'react-redux';
-import { removeNomination } from '../../../services/nominations/remove-nomination';
+import { removeNomination } from '../../../redux/nominations/action';
+import store from '../../../redux/store';
 
 const RemoveNominationButton = ({
   nomination
 }) => {
-  const currentNominations = useSelector(state => state.nominations.nominations);
-
   const clickHandler = (event) => {
     event.preventDefault();
-    removeNomination(nomination, currentNominations);
+    store.dispatch(removeNomination(nomination));
   }
 
   return(

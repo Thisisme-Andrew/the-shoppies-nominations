@@ -1,12 +1,15 @@
+import { movieSearch } from '../../../services/omdbAPI/movie-search';
+
 const MovieSearchBar = ({
-  search,
+  onSearch,
   pageNumber,
   searchTerm,
   setSearchTerm
 }) => {
 
   const handleClick = (event) => {
-    search(searchTerm, pageNumber);
+    movieSearch(searchTerm, pageNumber)
+    onSearch();
     event.preventDefault();
   }
 

@@ -6,9 +6,14 @@ const NominationList = ({
 }) => {
   let nominationList; 
 
-  if(nominations && nominations !== []){
-    nominationList = nominations.map((nomination) => <li className={styles.nominations}>{nomination.Title}<div className={styles.removeButton}><RemoveNominationButton nomination={nomination}/></div></li>);
-    
+  if(nominations && nominations !== []) {
+    nominationList = nominations.map((nomination) => 
+      <li className={styles.nominations}>{nomination.Title}
+        <div className={styles.removeButton}>
+          <RemoveNominationButton nomination={nomination}/>
+        </div>
+      </li>
+    );
   }else {
     nominationList = <div>No nomination nominated</div>;
   }

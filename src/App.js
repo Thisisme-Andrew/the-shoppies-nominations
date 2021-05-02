@@ -25,9 +25,9 @@ const App = () => {
 
   const totalMovieResults = movieResults ? movieResults.totalResults : null;
   const numOfPages = Math.ceil(totalMovieResults / 10);
-  const disablePreviousPage = ((pageNumber - 1) < 1) ? true : false;
-  const disableNextPage = (numOfPages <= pageNumber) ? true : false;
-  const disableSubmit = (nominations.length === 5) ? false : true;
+  const disablePreviousPage = (pageNumber - 1) < 1;
+  const disableNextPage = numOfPages <= pageNumber;
+  const disableSubmit = nominations.length !== 5
 
   const nextPage = () => {
     const nextPageNumber = pageNumber + 1;
@@ -53,7 +53,7 @@ const App = () => {
   }
 
   const onFinishedNominations = () => {
-    setModalHeader('You have finished Nominations');
+    setModalHeader('You have finished you nominations');
     setModalTitle('Congratulations');
     setModalDescription('Thanks for trying out this movie nomination demo, This is the end of the demo :)');
     setShowModal(true);
@@ -61,14 +61,25 @@ const App = () => {
 
   return (
     <div className={styles.mainContainer} style={{backgroundSize: "cover", backgroundImage: `url(${background})`}}>
-      <PopUpModal show={showModal} onHide={() => setShowModal(false)} header={modalHeader} title={modalTitle} description={modalDescription}/>
+      <PopUpModal 
+        show={showModal} 
+        onHide={() => setShowModal(false)} 
+        header={modalHeader} 
+        title={modalTitle}
+        description={modalDescription}
+      />
       <div className={styles.header}>
         <div className={styles.headerTitle}>
           <h1>Welcome</h1>
           <p>Start your movie Nominations List</p>
         </div>
         <div className={styles.searchContainer}>
-          <MovieSearchBar search={(searchTerm, pageNumber) => {movieSearch(searchTerm, pageNumber); setPageNumber(1);}} pageNumber={1} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+          <MovieSearchBar 
+            onSearch={() => setPageNumber(1)} 
+            pageNumber={1}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+          />
           {isFetchingMovies ? <div>Fetching movies!</div> : <div>Results: {totalMovieResults}</div>}
         </div>
       </div>
@@ -80,19 +91,20 @@ const App = () => {
                 <button onClick={previousPage} disabled={disablePreviousPage}>Previous</button>
                 <button onClick={nextPage} disabled={disableNextPage}>Next page</button>
               </div>
-              {error ? <div>Something went wrong</div> : null}
+              {error ? <div>{error}</div> : null}
               {movieResults ? <div className={styles.pageNumber}>Page: {pageNumber} / {numOfPages}</div> : null}
             </div>
           <div className={styles.movieListContainer}>
-            <MovieResultList results={movieResults} onFinshedNominations={onFinishedNominations}/>
+            {error ? null : <MovieResultList results={movieResults} onFinshedNominations={onFinishedNominations}/>}
           </div>
           {movieResults ? 
             <div className={styles.changePageUI}>
               <button onClick={previousPage} disabled={disablePreviousPage}>Previous</button>
               <button onClick={nextPage} disabled={disableNextPage}>Next page</button>
               <div>Page: {pageNumber} / {numOfPages}</div>
-            </div>
-          : null}
+            </div> 
+            : null
+          }
         </div>
         <div className={styles.nominationListContainer}>
           <h2>Nominations</h2>

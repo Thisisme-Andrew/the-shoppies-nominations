@@ -12,7 +12,7 @@ export default function reducer(state = moviesSearchInitialState, action) {
     case moviesSearchActionTypes.FETCH_MOVIES: {
       return {
         ...state,
-        isFetchingMovies: true,
+        isFetchingMovies: true
       };
     }
 
@@ -22,6 +22,7 @@ export default function reducer(state = moviesSearchInitialState, action) {
         ...state,
         isFetchingMovies: false,
         movieResults: parsedResponse,
+        error: null
       };
     }
 
@@ -30,6 +31,7 @@ export default function reducer(state = moviesSearchInitialState, action) {
         ...state,
         isFetchingMovies: false,
         error: action.error,
+        movieResults: null
       };
     }
 

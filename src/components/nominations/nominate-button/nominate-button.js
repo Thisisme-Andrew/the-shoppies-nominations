@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
-import { addNomination } from '../../../services/nominations/add-nomination';
+import { addNomination } from '../../../redux/nominations/action'
+import store from '../../../redux/store';
 
 const NominateButton = ({
   nomination,
@@ -9,8 +10,8 @@ const NominateButton = ({
 
   const preventNomination = () => {
     const nominationID = nomination.imdbID;
-    for(let i = 0; i < currentNominations.length; i++){
-      if(nominationID === currentNominations[i].imdbID){
+    for(let i = 0; i < currentNominations.length; i++) {
+      if(nominationID === currentNominations[i].imdbID || currentNominations.length >= 5) {
         return true;
       }
     }
@@ -19,7 +20,7 @@ const NominateButton = ({
 
   const clickHandler = (event) => {
     event.preventDefault();
-    addNomination(nomination, currentNominations);
+    store.dispatch(addNomination(nomination));
     if(currentNominations.length + 1 === 5){
       onFinshedNominations();
     }

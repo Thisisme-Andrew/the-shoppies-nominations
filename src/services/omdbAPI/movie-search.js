@@ -8,10 +8,13 @@ export const movieSearch = (title, pageNumber) => {
 
   axios.get(ROOT_URL, {params: {s: title, type: TYPE_MOVIE, page: pageNumber, apikey: API_KEY}})
     .then(response => {
-      store.dispatch(fetchMoviesSuccess(response));
+      if(response.data.Error) {
+        store.dispatch(fetchMoviesFailed(response.data.Error));
+      }else {
+        store.dispatch(fetchMoviesSuccess(response));  
+      }
     })
     .catch(error =>  {
       store.dispatch(fetchMoviesFailed(error));
     })
-  
 }
