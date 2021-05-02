@@ -4,7 +4,7 @@ To start this project from this github repo, you will need to first sign up for 
 
 After you sign up you will receive an email with an API key that will allow you to run this project in your local server but to do this you will first need to create a new file in the the project's directory named: ".env.local".
 
-In this .env.local you will want to write in this file your API key in this variable in the curly brackets: 
+In this .env.local you will want to write in this file your API key in this variable within the quotation marks: 
 
 **REACT_APP_OMDB_API_KEY="API key here"**
 
