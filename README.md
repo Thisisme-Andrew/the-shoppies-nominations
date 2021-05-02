@@ -6,9 +6,7 @@ After you sign up you will receive an email with an API key that will allow you 
 
 In this .env.local you will want to write in this file your API key in this variable in the curly brackets: 
 
-**REACT_APP_OMDB_API_KEY="<API key here>"**
-
-**Note: keep in mind to exclude the angular brackets eg. <> when inserting in the line above.
+**REACT_APP_OMDB_API_KEY="API key here"**
 
 After this you will be able to run the project but going to the projects directory and running the command:
 
