@@ -14,4 +14,4 @@ After this you will be able to run the project but going to the projects directo
 
 **npm start**
 
-If you have any problems feel free to contact andy.tang@shopify.com
+If you have any problems feel free to contact my email at: andy.tang@shopify.com
