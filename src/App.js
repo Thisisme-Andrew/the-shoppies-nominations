@@ -7,7 +7,8 @@ import { movieSearch } from './services/omdbAPI/movie-search';
 import NominationList from './components/nominations/nominaton-list/nomination-list';
 import SubmitNominationsButton from './components/nominations/submit-nominations/submit-nominations-button';
 import PopUpModal from './components/pop-up-modal';
-import background from './assets/background.jpg'
+import background from './assets/background.jpg';
+import logo from './assets/logo.png';
 
 const App = () => {
   const [pageNumber, setPageNumber] = useState(1);
@@ -69,10 +70,7 @@ const App = () => {
         description={modalDescription}
       />
       <div className={styles.header}>
-        <div className={styles.headerTitle}>
-          <h1>Welcome</h1>
-          <p>Start your movie Nominations List</p>
-        </div>
+        <img src={logo} className={styles.headerLogo}/>          
         <div className={styles.searchContainer}>
           <MovieSearchBar 
             onSearch={() => setPageNumber(1)} 

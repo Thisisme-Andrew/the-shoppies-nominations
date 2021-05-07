@@ -1,4 +1,6 @@
 import { movieSearch } from '../../../services/omdbAPI/movie-search';
+import SubmitButton from '../../ui/submit-button/submit-button'
+import styles from './movie-search-bar.module.css';
 
 const MovieSearchBar = ({
   onSearch,
@@ -13,16 +15,16 @@ const MovieSearchBar = ({
     event.preventDefault();
   }
 
-  return ( 
-    <div onSubmit={handleClick}>
-      <form>
-        <label>
-          <span className='visually-hidden'>Search Movie: </span>
-        </label>
-        <input type='text' value={searchTerm} onChange={term => setSearchTerm(term.target.value)} placeholder='Search here'/>
-        <button type='submit'>Search</button>
-      </form>
-    </div>
+  return (
+    <form>
+      <label>
+        <span>Search Movie: </span>
+      </label>
+      <div className={styles.searhBarContainer}>
+        <input className={styles.textInput} type='text' value={searchTerm} onChange={term => setSearchTerm(term.target.value)} placeholder='Search here'/>
+        <SubmitButton text={'Search'} onClick={handleClick}/>
+      </div>
+    </form>
   )
 }
 

@@ -1,0 +1,17 @@
+.submitButtonContainer {
+  height: 100%;
+  width: 18%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.submitButtonText {
+  position: absolute;
+  color: white;
+  text-shadow: 1px 1px slategray;
+}
+.submitButtonImage {
+  height: 100%;
+  width: 100%;
+}

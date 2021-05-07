@@ -1,0 +1,18 @@
+.searhBarContainer {
+  background-color: white;
+  padding: 2%;
+  display: flex;
+  flex-direction: row;
+  border-radius: 20px;
+  justify-content: flex-end;
+}
+.textInput {
+  border: none;
+  outline: none;
+  text-align: right;
+}
+.searchButton {
+  align-self: flex-end;
+  align-content: flex-end;
+  float: right;
+}
