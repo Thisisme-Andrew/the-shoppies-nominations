@@ -5,7 +5,6 @@ import MovieSearchBar from './components/movie-search/search-bar/movie-search-ba
 import MovieResultList from './components/movie-search/search-results/movie-result-list/movie-result-list';
 import { movieSearch } from './services/omdbAPI/movie-search';
 import NominationList from './components/nominations/nominaton-list/nomination-list';
-import SubmitNominationsButton from './components/nominations/submit-nominations/submit-nominations-button';
 import SubmitButton from './components/ui/submit-button/submit-button'
 import PopUpModal from './components/pop-up-modal';
 import background from './assets/background.jpg';

@@ -39,6 +39,7 @@
 .nominationListContainer {
   display: flex;
   flex-direction: column;
+  flex: 1;
   height: inherit;
   width: 100%;
   margin: 0 0 0 5%;
@@ -70,7 +71,7 @@
   position: absolute;
 }
 .nominationsCounter {
-  margin-left: 15%;
+  /* margin-left: 15%; */
   margin-right: 20%;
 }
 .SubmitNominationsButton {
