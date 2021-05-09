@@ -3,10 +3,15 @@ import styles from './submit-button.module.css';
 
 const SubmitButton = ({
   onClick,
-  text
+  text,
+  type,
+  disabled,
+  style
 }) => {
+
+  console.log('this is disabled status: ', disabled);
   return (
-    <div className={styles.submitButtonContainer} onClick={onClick}>
+    <div className={styles.submitButtonContainer} onClick={onClick} type={type} disabled={disabled} style={style}>
       <div className={styles.submitButtonText}>{text}</div>
       <img className={styles.submitButtonImage} src={submitImage}/>
     </div>

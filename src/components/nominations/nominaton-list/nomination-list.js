@@ -8,7 +8,8 @@ const NominationList = ({
 
   if(nominations && nominations !== []) {
     nominationList = nominations.map((nomination) => 
-      <li className={styles.nominations}>{nomination.Title}
+      <li className={styles.nominations}>
+        {nomination.Title} ({nomination.Year})
         <div className={styles.removeButton}>
           <RemoveNominationButton nomination={nomination}/>
         </div>

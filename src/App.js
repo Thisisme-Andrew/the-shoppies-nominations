@@ -6,6 +6,7 @@ import MovieResultList from './components/movie-search/search-results/movie-resu
 import { movieSearch } from './services/omdbAPI/movie-search';
 import NominationList from './components/nominations/nominaton-list/nomination-list';
 import SubmitNominationsButton from './components/nominations/submit-nominations/submit-nominations-button';
+import SubmitButton from './components/ui/submit-button/submit-button'
 import PopUpModal from './components/pop-up-modal';
 import background from './assets/background.jpg';
 import logo from './assets/logo.png';
@@ -107,8 +108,13 @@ const App = () => {
         <div className={styles.nominationListContainer}>
           <h2>Nominations</h2>
           <NominationList nominations={nominations}/>
-          <div>{nominations.length}/5</div>
-          <SubmitNominationsButton onClick={submitNominations} disabled={disableSubmit}/>
+          <div className={styles.nominationListFooter}>
+            <div className={styles.nominationsCounter}>{nominations.length}/5</div>
+            <div className={styles.SubmitNominationsButton}>
+              {/* <SubmitNominationsButton onClick={submitNominations} disabled={disableSubmit}/> */}
+              <SubmitButton onClick={submitNominations} disabled={disableSubmit} text={'Submit'} style={{height: '100%', width: '30%'}}/>
+            </div>
+          </div>
         </div>
       </div>
     </div>

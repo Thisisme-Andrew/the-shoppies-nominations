@@ -5,14 +5,20 @@
   flex-direction: row;
   border-radius: 20px;
   justify-content: flex-end;
+  align-items: center;
 }
 .textInput {
+  width: 100%;
+  flex: 1;
+  padding-right: 3%;
   border: none;
   outline: none;
   text-align: right;
 }
-.searchButton {
+/* .searchButton {
+  flex: 1;
   align-self: flex-end;
   align-content: flex-end;
   float: right;
-}
+  width: 30%;
+} */

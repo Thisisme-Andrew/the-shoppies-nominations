@@ -37,6 +37,8 @@
   overflow-y: scroll;
 }
 .nominationListContainer {
+  display: flex;
+  flex-direction: column;
   height: inherit;
   width: 100%;
   margin: 0 0 0 5%;
@@ -57,4 +59,20 @@
   flex-direction: row;
   justify-content: space-between;
   align-content: center;
+}
+.nominationListFooter {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 45%;
+  align-items: center;
+  bottom: 10%;
+  position: absolute;
+}
+.nominationsCounter {
+  margin-left: 15%;
+  margin-right: 20%;
+}
+.SubmitNominationsButton {
+  /* flex: 1; */
 }

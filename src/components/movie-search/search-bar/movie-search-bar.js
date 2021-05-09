@@ -16,13 +16,19 @@ const MovieSearchBar = ({
   }
 
   return (
-    <form>
+    <form onSubmit={handleClick}>
       <label>
         <span>Search Movie: </span>
       </label>
       <div className={styles.searhBarContainer}>
-        <input className={styles.textInput} type='text' value={searchTerm} onChange={term => setSearchTerm(term.target.value)} placeholder='Search here'/>
-        <SubmitButton text={'Search'} onClick={handleClick}/>
+        <input 
+          className={styles.textInput} 
+          type='text' 
+          value={searchTerm} 
+          onChange={term => setSearchTerm(term.target.value)} 
+          placeholder='Ex. The Titanic'
+        />
+        <SubmitButton text={'Search'} onClick={handleClick} type={'submit'}/>
       </div>
     </form>
   )
