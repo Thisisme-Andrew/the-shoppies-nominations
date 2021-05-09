@@ -15,7 +15,6 @@ const RemoveNominationButton = ({
     <div className={styles.trashButtonContainer} onClick={clickHandler}>
       <FaTrashAlt/>
     </div>
-    // <button onClick={clickHandler}>Remove</button>
   )
 }
 

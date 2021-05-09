@@ -1,5 +1,4 @@
 export const ROOT_URL = 'https://www.omdbapi.com/';
-// export const API_KEY = process.env.REACT_APP_OMDB_API_KEY;
 export const API_KEY = 'ae67d394';
 export const TYPE_MOVIE = 'movie';
 export const TYPE_SERIES = 'series';

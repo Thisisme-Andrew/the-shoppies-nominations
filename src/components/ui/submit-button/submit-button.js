@@ -9,7 +9,6 @@ const SubmitButton = ({
   style
 }) => {
 
-  console.log('this is disabled status: ', disabled);
   return (
     <div className={styles.submitButtonContainer} onClick={onClick} type={type} disabled={disabled} style={style}>
       <div className={styles.submitButtonText}>{text}</div>
