@@ -14,7 +14,8 @@ export const movieSearch = (title, pageNumber) => {
         store.dispatch(fetchMoviesSuccess(response));  
       }
     })
-    // .catch(error =>  {
-    //   store.dispatch(fetchMoviesFailed(error));
-    // })
+    .catch(error =>  {
+      console.log('error is: ', error);
+      store.dispatch(fetchMoviesFailed(error));
+    })
 }
