@@ -1,3 +1,8 @@
+## Live Demo
+To see the live version of this app, here is a deploy of it here at:
+
+https://the-shoppies-nominations.herokuapp.com/
+
 # Getting Started with the Movie Nomination demo.
 
 To start this project from this github repo, you will need to first sign up for an api key with OMDBapi at http://www.omdbapi.com/apikey.aspx.
