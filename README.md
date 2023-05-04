@@ -1,7 +1,7 @@
 ## Live Demo
 To see the live version of this app, here is a deploy of it here at:
 
-https://the-shoppies-nominations.herokuapp.com/
+https://the-shoppies-nominations.vercel.app/
 
 # Getting Started with the Movie Nomination demo.
 
@@ -17,4 +17,4 @@ After this you will be able to run the project but going to the projects directo
 
 **npm start**
 
-If you have any problems feel free to contact my email at: andy.tang@shopify.com
+If you have any problems feel free to contact my email at: andy.tangg4@gmail.com
